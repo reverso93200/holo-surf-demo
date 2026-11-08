@@ -32,6 +32,16 @@
     {
       "step": "installPlugin",
       "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "koko-analytics"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
         "resource": "url",
         "url": "https://raw.githubusercontent.com/reverso93200/holo-surf-demo/main/holo-surf-core.zip"
       },
