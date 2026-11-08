@@ -1,0 +1,47 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "Holo Surf Capbreton",
+    "description": "Démo du site Holo Surf Capbreton (thème holo-surf et extension holo-surf-core).",
+    "author": "Koino"
+  },
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "login": true,
+  "steps": [
+    {
+      "step": "setSiteLanguage",
+      "language": "fr_FR"
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/reverso93200/holo-surf-demo/main/holo-surf.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/reverso93200/holo-surf-demo/main/holo-surf-core.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; if ( function_exists( 'holo_surf_installer' ) ) { holo_surf_installer(); }"
+    }
+  ]
+}
